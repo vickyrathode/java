@@ -1,0 +1,34 @@
+class StringComparator{
+    public static boolean CompareString(String s1,String s2){
+        return s1.equals(s2);
+    }
+
+    public static boolean CompareString(String s1,String s2,int num)
+    {
+        if(num>0 && s1.length() >= num && s2.length()>= num){
+            return s1.substring(0,num).equals(s2.substring(0,num));
+        }
+        else{
+            return false;
+        }
+    }
+
+}
+
+public class CompareStings {
+
+public static void main(String[] args)
+{
+    String s1 = "Hello,World";
+    String s2 = "Hello,World";
+
+    boolean result1 = StringComparator.CompareString(s1,s2);
+    System.out.print("version1 :"+result1);
+
+    int num=6;
+    boolean result2 = StringComparator.CompareString(s1,s2,num);
+    System.out.print("\nversion2 : "+result2);
+
+}
+    
+}
