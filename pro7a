@@ -1,0 +1,28 @@
+//a
+interface Compute{
+ double convert(double value);
+}
+class KilobyteToGigabyte implements Compute {
+ public double convert(double kilobyte){
+ return kilobyte / Math.pow(1024,2);
+ }
+}
+class EuroToRupees implements Compute {
+ public double convert(double euros){
+ return euros * 89.71;
+ }
+}
+public class Convertion{
+ public static void main(String[] args){
+ Compute kilobyte = new KilobyteToGigabyte();
+ Compute euros = new EuroToRupees();
+ double kilobyteValue = 2048;
+ double gigabyteValue = kilobyte.convert(kilobyteValue);
+ System.out.println(+kilobyteValue+"kilobyte is eqaul to "
++gigabyteValue +" gigabyte" );
+ 
+ double euroValue = 100;
+ double rupeesValue = euros.convert(euroValue);
+ System.out.println(+euroValue+" euros is equal to "+rupeesValue+" 
+rupees." );
+ }
