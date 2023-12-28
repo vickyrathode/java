@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Except {
+
+    static class except{
+        int n1,n2;
+        public except(int n1,int n2 ){
+            this.n1 = n1;
+            this.n2 = n2;
+        }
+
+        public void divide()
+        {
+            try{
+            int res = n1/n2;
+            System.out.print("result : "+res);
+            }
+            catch(ArithmeticException ex)
+            {
+                System.out.print("arthemathic "+ ex);
+            }
+
+        }
+    }
+        public static void main(String[] args) {
+        int n1, n2;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter the first number");
+        n1 = input.nextInt();
+        System.out.println("Enter the second number");
+        n2 = input.nextInt();
+
+        except ex = new except(n1, n2);
+        ex.divide();
+    }
+
+    
+}
