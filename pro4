@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+class Banks {
+    protected String name;
+    protected int acc;
+    protected double balance;
+
+    public void details() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("\nEnter name :");
+        name = input.nextLine();
+        System.out.print("Enter Acc number");
+        acc = input.nextInt();
+        System.out.print("Enter balance");
+        balance = input.nextDouble();
+    }
+
+    public void display() {
+        System.out.print("\nName : " + name);
+        System.out.print("\nAcc Number :" + acc);
+        System.out.print("\nBalance :" + balance);
+    }
+
+    public void calculateinterest() {
+        System.out.println("\nNot Given");
+    }
+}
+
+class CityBank extends Banks {
+    private double interestRate = 0.05;
+
+    public void calculateinterest() {
+        double interest = balance * interestRate;
+        System.out.println("Interest rate of CityBank :" + interest);
+    }
+}
+
+class SBIBank extends Banks {
+    private double interestRate = 0.04;
+
+    public void calculateinterest() {
+        double interest = balance * interestRate;
+        System.out.println("Interest rate of SBIBank :" + interest);
+    }
+}
+
+class CanaraBank extends Banks {
+    private double interestRate = 0.06;
+
+    public void calculateinterest() {
+        double interest = balance * interestRate;
+        System.out.println("Interest rate of CanaraBank :" + interest);
+    }
+}
+
+public class Bank {
+    public static void main(String[] args) {
+        CityBank citybankAc = new CityBank();
+        SBIBank sbibankAC = new SBIBank();
+        CanaraBank canarabankAC = new CanaraBank();
+
+        System.out.print("\nEnter details of CITYBANK : \n");
+        citybankAc.details();
+        citybankAc.display();
+        citybankAc.calculateinterest();
+
+        System.out.print("\nEnter Details of SBIBANK :\n");
+        sbibankAC.details();
+        sbibankAC.display();
+        sbibankAC.calculateinterest();
+
+        System.out.print("\nEnter Details of CANARABANK : \n");
+        canarabankAC.details();
+        canarabankAC.display();
+        canarabankAC.calculateinterest();
+    }
+}
