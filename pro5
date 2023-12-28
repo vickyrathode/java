@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class Complex {
+    static class complexnumber{
+        int real,image;
+        public complexnumber(int real,int image)
+        {
+            this.real=real;
+            this.image=image;
+        }
+
+        public static complexnumber add(complexnumber n1,complexnumber n2)
+        {
+            return new complexnumber(n1.real+n2.real,n1.image+n2.image);
+        }
+        
+        public static complexnumber sub(complexnumber n1,complexnumber n2)
+        {
+            return new complexnumber(n1.real-n2.real,n1.image-n2.image);
+        }
+        
+        public static complexnumber multi(complexnumber n1,complexnumber n2)
+        {
+            return new complexnumber(n1.real*n2.real,n1.image*n2.image);
+        }
+
+        public static boolean compare(complexnumber n1,complexnumber n2)
+        {
+            return n1.real == n2.real && n1.image == n2.image;
+        }
+    }
+
+
+    public static void main(String[] args){
+        int nr1,ni1,nr2,ni2;
+        Scanner input = new Scanner(System.in);
+        System.out.print("enter first real number :");
+        nr1=input.nextInt();
+         System.out.print("enter first image number :");
+        ni1=input.nextInt();
+         System.out.print("enter first real number :");
+        nr2=input.nextInt();
+         System.out.print("enter first real number :");
+        ni2=input.nextInt();
+
+        complexnumber c1 = new complexnumber(nr1,ni1);
+        complexnumber c2 = new complexnumber(nr2,ni2);
+
+         
+        System.out.print("1-add\t2-sub\t3-multi\t4-compare\n");
+        int num = input.nextInt();
+
+      
+        switch(num)
+        {
+            case 1:complexnumber addition = complexnumber.add(c1,c2);
+            System.out.println("the sum is "+addition.real+"and image is "+addition.image);
+            break;
+               case 2:complexnumber sub = complexnumber.sub(c1,c2);
+            System.out.println("the sum is "+sub.real+"and image is "+sub.image);
+            break;
+               case 3:complexnumber multi = complexnumber.multi(c1,c2);
+            System.out.println("the sum is "+multi.real+"and image is "+multi.image);
+            break;
+               case 4:boolean compare= complexnumber.compare(c1,c2);
+            System.out.println("compare "+(compare ? "Equal" : "not equal"));
+            break;
+
+        }
+
+ 
+        
+
+    }
+    
+}
