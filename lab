@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Area {
+     public static void main(String args[])
+    {
+        double l, b, area;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the Length of Rectangle");
+        l = scanner.nextDouble();
+        System.out.println("Enter the Breadth of Rectangle");
+        b = scanner.nextDouble();
+
+        area = l * b;
+
+        System.out.println("The area of Rectangle with length "+l+" and breadth "+b+ " is "+area);
+
+        scanner.close();
+    
+}
+}
